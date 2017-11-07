@@ -1,0 +1,226 @@
+/*
+* Human readable CSS file
+*  - design_c.css is the compressed version of this and will be used in main.tpl
+*/
+
+body {
+    width: initial;
+    padding: 0px;
+}
+
+@media screen and (min-width:1500px) {
+    body {
+        width: 50%;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 1050px) and (max-width: 1500px) {
+    body {
+        width:65%;
+        margin:auto;
+    }
+}
+
+body {
+    font-family: Helvetica, Tahoma, Arial;
+    background-color: lightgray;
+    margin-top: 10px;
+}
+
+header,
+main,
+footer,
+.popup {
+    border-radius: 4px;
+    color: #333;
+    display: block;
+}
+
+header,
+main,
+footer {
+    background-color: white;
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+    word-break: break-word;
+    line-height: 1.7em;
+    border: 1px solid #c9c9c9;
+}
+
+.popup {
+    background-color: #fd8585;
+    border: 1px solid #f30909;
+    padding: 5px;
+    margin-bottom: 10px;
+    overflow: auto;
+}
+
+.popup font {
+    vertical-align: middle;
+}
+
+.popup button {
+    float: right;
+}
+
+footer {
+    font-size: 0.7em;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* main */
+main a {
+    color: orange;
+}
+
+main a h2 {
+    display: inline-block;
+    margin: 0px;
+}
+
+main ul li {
+    margin-top: 15px;
+}
+
+.latest_update {
+    margin-top: 7px;
+}
+
+.short_description {
+    padding-top: 7px;
+}
+
+.search_form {
+    display: inline-block;
+}
+
+.side_note {
+    font-size: 12px;
+}
+
+.very_important {
+    color: red;
+}
+
+.page_navigator {
+    text-align: center;
+}
+
+.page_prev {
+    display: inline-block;
+    float: left;
+}
+
+.page_next {
+    display: inline-block;
+    float: right;
+}
+
+.disabled {
+    color: gray;
+    pointer-events: none;
+}
+
+#zedit-editor textarea {
+    width: 100%;
+    height: 200px;
+}
+
+.zedit_button {
+    display: inline-block;
+    border: 1px solid lightgray;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-right: 10px;
+}
+
+.zedit_button:hover {
+    cursor: pointer;
+    background-color: #ffd484;
+}
+
+.zedit-shortcut {
+    cursor: pointer;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+#zedit-shortcut-selected {
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #ffd484;   
+}
+
+/* For normalizing lists inside of dd-tags */
+.dd_ul {
+    list-style-type: none;
+    padding: 0px;
+    margin-top: 0px;
+}
+
+.dd_ul li {
+    margin-top: 0px;
+}
+
+input {
+    padding: 2px;
+}
+
+/* Post-Elements */
+code {
+    font-family: Lucida Console;
+    color: gray
+}
+
+pre {
+    display: inline-block;
+    width: 100%;
+    font-size:13px;
+}
+
+img {
+    overflow-x: auto;
+    display: block;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.41);
+    -moz-box-shadow:    0px 0px 15px 0px rgba(50, 50, 50, 0.41);
+    box-shadow:         0px 0px 15px 0px rgba(50, 50, 50, 0.41);
+    padding: 10px;
+    margin: auto; /* centralize */
+    margin-bottom: 10px;
+    margin-top: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+blockquote {
+    border-left: 5px solid orange;
+    padding: 5px;
+    padding-left: 10px;
+    background-color: #fff2c7;
+    font-style: italic;
+}
+
+.zedit-preview p,
+.zedit-preview pre,
+#post_content p,
+#post_content pre {
+    margin: 0;
+    margin-top: 10px;
+}
+
+.zedit-preview code,
+#post_content code {
+    margin: 0;
+}

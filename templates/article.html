@@ -1,0 +1,58 @@
+{% macro full(post) %}
+    <article>
+        <h1>{{ post.title }}</h1>
+
+        <div id="post_content">
+            {# {dump_file id=$post_full.id language=$post_full.language} #}
+            {% set postpath = 'library/' ~ post.id ~ '/' ~ (post.language ?: 'en') ~ '.txt' %}
+            {{ postpath|readfile|raw }}
+        </div>
+
+        <aside>
+            <hr>
+            <h3>Meta</h3>
+            <dl>
+                <dt>Date:</dt>
+                    <dd><time>{{ post.date }}</time></dd>
+                <dt>Tags:</dt>
+                    <dd>
+                        {% for tag in post.tags %}
+                            <a href="search?q=%23{{ tag }}">{{ tag }}</a>{% if not loop.last %}&#44;{% endif %}
+                        {% endfor %}
+                    </dd>
+                <dt>Languages:</dt>
+                    <dd>
+                        {% for lang in post.available %}
+                            <a href="view?id={{ post.id }}&l={{ lang.id }}">{{ lang.name }}</a>{% if not loop.last %}&#44;{% endif %}
+                        {% endfor %}
+                    </dd>
+                {% if post.updates is not empty %}
+                    <dt>Updates:</dt>
+                        <dd>
+                            <ul class="dd_ul">
+                                {% for update in post.updates %}
+                                    <li><time>{{ update.date }}</time>: {{ update.reason }}</li>
+                                {% endfor %}
+                            </ul>
+                        </dd>
+                {% endif %}
+            </dl>
+        </aside>
+    </article>
+    <!--
+    <script src="templates/js/prism.js"></script>
+    <script>
+        Prism.highlightAll(true);
+    </script>
+    -->
+{% endmacro %}
+
+{% macro short(post) %}
+    <article>
+        <a href="view?id={{ post.id }}"><h2>{{ post.title }}</h2></a>
+        <div class="short_description">{{ post.description|raw }}</div>
+        {% if post.last_edit is not empty %}
+            <h5 class="latest_update">Latest update: <time>{{ post.last_edit }}</time></h5>
+        {% endif %}
+    </article>
+{% endmacro %}

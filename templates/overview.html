@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% import "article.html" as article %}
+
+{% block content %}
+
+  {% for date, posts in overview %}
+      <h2>{{ date }}</h2>
+      <ul>
+          {% for post in posts %}
+              <li>
+                  {{ article.short(post) }}
+              </li>
+          {% endfor %}
+      </ul>
+  {% endfor %}
+
+  <nav class="page_navigator">
+      {# TODO: Add get-Parameters #}
+      {% set searchstring = app.get.q is defined ? '&q=' ~ app.get.q : '' %}
+      <a href="{{ overview_jump }}?p={{ overview_page-1 }}{{ searchstring }}" class="page_prev {% if overview_page <= 1 %}{{ 'disabled' }}{% endif %}">< prev</a>
+      <span>Page {{ overview_page }}</span>
+      {# TODO: Add get-Parameters #}
+      <a href="{{ overview_jump }}?p={{ overview_page+1 }}{{ searchstring }}" class="page_next {% if overview_page >= overview_max_page %}{{ 'disabled' }}{% endif %}">next ></a>
+  </nav>
+
+{% endblock %}

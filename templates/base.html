@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>lausek</title>
+        <link rel="icon" type="image/gif" href="/templates/assets/icon.gif">
+        <link rel="alternate" type="application/rss+xml" title="lausek | Blog feed RSS" href="/feed">
+        <link rel="stylesheet" type="text/css" href="/templates/css/page.css">
+        {% block resources %}{% endblock %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="language" content="EN">
+        <meta http-equiv="language" content="DE">
+        <meta name="author" content="lausek">
+        <meta name="description" content="This is my little blog about programming - mainly in ABAP - and other computer stuff.">
+        <meta name="keywords" content="lausek, sap, abap, laurin, kirbach, lpk">
+        {% block meta %}{% endblock %}
+    </head>
+    <body>
+
+        <noscript>
+            <div class="popup">
+                JavaScript is disabled...
+            </div>
+        </noscript>
+
+        <header>
+          {% include("header.html") %}
+        </header>
+
+        <main>
+          {% block content %}
+            <h3>Apparently... there is nothing yet...</h3>
+          {% endblock %}
+        </main>
+
+        <footer>
+            Handcrafted by lausek 2017 |
+            <a href="/about/imprint">Impressum</a>
+        </footer>
+
+    </body>
+</html>

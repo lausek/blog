@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block resources %}
+    <link rel="stylesheet" type="text/css" href="templates/css/prism.css">
+    <script type="text/javascript" src="templates/js/zedit.js"></script>
+    <script type="text/javascript" src="templates/js/editor.js"></script>
+{% endblock %}
+
+{% block content %}
+{% set ext = app.get.id is defined ? '?id=' ~ app.get.id %}
+<form action="/actions/change.php{{ ext }}" method="post">
+    <fieldset>
+        <legend>General</legend>
+        <input type="text" name="title" placeholder="Title..." size="100%" value="{{ info.title }}"/> <br />
+        <input type="text" name="tags" placeholder="Tags..." size="100%" value="{{ info.tags }}"/> <br />
+        <input type="text" name="keywords" placeholder="Keywords..." size="100%" value="{{ info.keywords }}"/><br />
+        <textarea name="description" placeholder="Description..." style="resize:none;width:70%;">{{ info.description }}</textarea> <br />
+        <input type="submit" value="Commit" />
+        {% if app.get.id is defined %}
+            <p>
+                <input type="text" name="reason" placeholder="Update reason..." size="100%">
+            </p>
+        {% endif %}
+    </fieldset>
+
+    <fieldset id="assets">
+        <legend>Assets</legend>
+
+        <div id="addfile"></div>
+
+        <button id="addfile-confirm">+</button>
+
+    </fieldset>
+
+
+    <fieldset>
+        <legend>Language</legend>
+        
+        <div id="zedit-raw"></div>
+        
+        <div id="addlang">
+            <input type="text" id="addlang-name">
+        </div>
+
+        <button id="addlang-confirm">+</button>
+
+        <div id="zedit-editor"></div>
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Preview</legend>
+
+        <div id="zedit-preview">
+            {% for lang, content in info.entries %}
+                <div id="zedit-preview-{{ lang }}" class="zedit-preview">
+                    {{ content|raw }}
+                </div>
+            {% endfor %}
+        </div>
+
+    </fieldset>    
+
+</form>
+{% endblock %}

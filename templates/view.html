@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% import "article.html" as article %}
+
+{#
+{% block resources %}
+<link rel="stylesheet" type="text/css" href="templates/css/github-gist_c.css">
+<link rel="stylesheet" type="text/css" href="templates/css/prism.css">
+{% endblock %}
+#}
+
+{% block meta %}
+    <meta name="author" content="{{ meta.author }}">
+    <meta name="description" content="{{ meta.description }}">
+    <meta name="keywords" content="{{ meta.keywords }}">
+{% endblock %}
+
+{% block content %}
+    {{ article.full(post) }}
+{% endblock %}

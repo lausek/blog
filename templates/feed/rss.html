@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>lausek</title>
+    <link>http://www.lausek.eu</link>
+    <description>Programming stuff made by lausek</description>
+    <language>en</language>
+    <copyright>lausek</copyright>
+    <pubDate>{{ "now"|date("%Y-%m-%dT%H:%M:%SZ") }}</pubDate>
+    {% for entry in overview %}
+    <item>
+        <title>{{ entry.title }}</title>
+        <description>{{ entry.description }}</description>
+        <link>http://lausek.eu/view?id={{ entry.id }}</link>
+        <author>lausek</author>
+        <guid>{{ entry.id }}</guid>
+        <pubDate>{{ entry.date }}T00:00:00Z</pubDate>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>
