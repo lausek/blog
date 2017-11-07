@@ -1,0 +1,9 @@
+ErrorDocument 404 /error.php?e=missing
+ErrorDocument 500 /error.php?e=missing
+
+RewriteEngine On
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule .*class.php /error.php?e=missing [L]
+RewriteRule (index|view|search|feed|error|admin|editor|quit)$ $1.php [L]
+RewriteRule about\/(\S+) inform.php?about=$1 [L]

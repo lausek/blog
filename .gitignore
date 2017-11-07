@@ -1,0 +1,7 @@
+/archive/*
+/library/*
+/meta/*
+/test/*
+/tools/*
+Thumbs.db
+DBInterface.class.php
