@@ -1,6 +1,6 @@
 <?php
 
-require('Autoloader.php');
+require('src/Autoloader.php');
 
 $ui = new UIManager;
 

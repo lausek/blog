@@ -1,5 +1,5 @@
 <?php
 
-require('Autoloader.php');
+require('src/Autoloader.php');
 
 (new UIManager)->about();

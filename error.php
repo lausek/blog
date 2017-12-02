@@ -1,6 +1,6 @@
 <?php
 
-require('Autoloader.php');
+require('src/Autoloader.php');
 
 if(!isset($_GET["e"])) {
 

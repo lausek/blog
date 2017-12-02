@@ -1,6 +1,6 @@
 <?php
 
-require('Autoloader.php');
+require('src/Autoloader.php');
 
 $view = new UIManager;
 $view->assign("overview", (new Loader)->load(1));
