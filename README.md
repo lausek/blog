@@ -1,2 +1,2 @@
 # blog
-My new blog repo
+My old blog repo. Development has ended.
